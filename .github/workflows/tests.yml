@@ -10,17 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install Node.js
-        run: |
-          curl -fsSL https://deb.nodesource.com/setup_20.x |
-          sudo apt-get install -y nodejs
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Project Dependencies
         run: npm install
-        working-directory: nest-study
       
-      - name: Run Tests
+      - name: Run Unit Tests from the APIs
         run: npm test
-        working-directory: nest-study
 
     

@@ -1,7 +1,7 @@
 name: Unit Tests
 
 on:
-  pull_requestt:
+  pull_request:
     branches:
       - master
 
@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar 
-        run: |
-          git clone https://github.com/${{github.repository}}
-
       - name: Install Node.js
         run: |
           curl -fsSL https://deb.nodesource.com/setup_20.x |

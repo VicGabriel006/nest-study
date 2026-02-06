@@ -17,8 +17,10 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: nest-study
       
       - name: Run Tests
         run: npm test
+        working-directory: nest-study
 
     
